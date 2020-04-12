@@ -1,0 +1,17 @@
+<div class="log" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="col-md-4" role="document">
+        <div class="">
+            <div class="">
+                <div id="mensajeAlertaUsuarios"></div>
+                <section class="card-body"><h5 class="card-title">Inicio de sesion</h5>
+                    <div class="position-relative form-group"><label for="user" class="">Nombre de usuario</label><input [(ngModel)]="username" type="text" name="nombre" id="nombre" placeholder="Ejemplo: julio" class="form-control form-control-sm"></div>
+                    <div class="position-relative form-group"><label for="pass" class="">Contraseña</label><input [(ngModel)]="password" type="password" name="pass" id="pass" placeholder="Ejemplo: *****" class="form-control form-control-sm"></div>
+                </section>      
+            </div>
+            <div class="">
+                <button (click)="login()" type="button" class="btn mr-2 mb-2 btn-secondary" >Iniciar Sesion</button>
+                <button (click)="register()" type="button" class="btn mr-2 mb-2 btn-primary" >Registrar usuario <i class="fas fa-plus" title="registrar"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

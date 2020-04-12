@@ -1,0 +1,41 @@
+<div class="modal fade" id="modalPedidos" #modal tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar pedido</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="mensajeAlertaGuardarPedidos"></div>
+                <section class="card-body"><h5 class="card-title">Datos del pedido</h5>
+                    <div class="position-relative form-group">
+                        <label for="pedidito" class="">Seleccione un Articulo</label>
+                        <select [(ngModel)]="pedidito" id = "pedidito" class="form-control form-control-sm">
+                            <option *ngFor="let cerebro of cerebros | async; let i = index" >
+                                {{cerebro.flavor}}, {{cerebro.description}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="position-relative form-group"><label for="cantidad" class="">Cantidad</label><input [(ngModel)]="cantidad" type="number" name="cantidad" id="cantidad" placeholder="Ej: 2" class="form-control form-control-sm"></div>
+                    <div class="position-relative form-group">
+                        <label for="tipo" class="">Tipo de envío</label>
+                        <select [(ngModel)]="tipo" name="select" id="tipo" class="form-control form-control-sm">
+                            <option disabled="true" selected >- Seleccione un modo de envío-</option> 
+                            <option>GOLD</option> 
+                            <option>SILVER</option>  
+                            <option>BRONZE</option>    
+                        </select>
+                    </div>
+                </section>      
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss='alert' class="mt-1 btn btn-primary" (click)="guardarPedido()" >Guardar cambios</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+

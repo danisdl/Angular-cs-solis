@@ -1,0 +1,19 @@
+
+<div class="col-md-8 offset-2"> 
+    <div>
+        <div>
+            <h1 class="text-center">Tus cerebros añadidos</h1>
+        </div>
+        <br>
+        <div style="display: block">
+            <canvas baseChart
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType">
+            </canvas>
+        </div>
+        <div>
+            <button mat-button mat-raised-button class="btn btn-success" (click)="actualizarDatos()">Mostrar valores reales</button>
+        </div>
+    </div>
+</div>

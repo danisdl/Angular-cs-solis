@@ -1,0 +1,37 @@
+<div class="card-body"><h5 class="card-title">Pedidos</h5>
+    <table class="mb-0 table table-info">
+        <thead>
+        <tr>
+            <th>Numero</th>
+            <th>Tu pedido</th>
+            <th>Cantidad</th>
+            <th>Fecha</th>
+            <th>Tipo de envío</th>
+            <th>Fecha de Entrega</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let pedido of pedidos | async; let i = index">
+            <th scope="row"> {{ i+1 }} </th>
+            <td>{{ pedido.pedidito}}</td>
+            <td>{{ pedido.cantidad }}</td>
+            <td>{{pedido.fecha | date:'dd-MM-yyyy'}}</td>
+            <td>{{ pedido.tipo }}</td>
+            <td>{{ pedido.fechaEntrega | date:'dd-MM-yyyy'}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <button type="button" class="btn mr-2 mb-2 btn-success" data-toggle="modal" data-target="#modalPedidos">Agregar</button>
+</div>
+
+<div>
+    <ul *ngFor="let cerebro of cerebros" >
+        <li>{{cerebro.flavor}}</li>
+        <li>{{cerebro.descripcion}}</li>
+    </ul>
+</div>
+
+
+
+
